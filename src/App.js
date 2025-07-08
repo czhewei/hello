@@ -21,7 +21,7 @@ function Header({ toggleAbout, showAbout }) {
         </button>
         <span className="w-px h-8 bg-foreground"></span>
         <a
-          href="https://www.linkedin.com/in/czhew/"
+          href="https://www.linkedin.com/in/czhewei/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-accent"
