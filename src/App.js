@@ -5,7 +5,7 @@ import './index.css';
 function Header({ toggleAbout, showAbout }) {
   return (
     <header className="text-center w-full max-w-xl mx-auto mt-8">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-light">
+      <h1 className="text-2xl font-light">
         Hello, I'm <span className="font-bold text-foreground">Zhe Wei</span>.
       </h1>
       <div className="flex items-center justify-center gap-6 mt-2">
@@ -48,7 +48,7 @@ function AboutSection() {
   ];
 
   return (
-    <section className="max-w-xl mx-auto mt-6 text-justify px-2 sm:px-0">
+    <section className="max-w-xl mx-auto mt-6 text-justify">
       {aboutText.map((paragraph, index) => (
         <p key={index} className="mb-4">
           {paragraph}
@@ -66,7 +66,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50 text-foreground px-2 sm:px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50 text-foreground">
       <Header toggleAbout={toggleAbout} showAbout={showAbout} />
       <main className="w-full max-w-2xl mx-auto pt-4">
         {showAbout && <AboutSection />}
