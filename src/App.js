@@ -72,9 +72,11 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50 text-foreground px-4 sm:px-8">
       <Header toggleAbout={toggleAbout} showAbout={showAbout} />
-      {showAbout && <AboutSection />}
+      <main className="flex-1 flex flex-col items-center justify-center w-full max-w-2xl mx-auto py-8">
+        {showAbout && <AboutSection />}
+      </main>
     </div>
   );
 }
