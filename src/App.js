@@ -4,8 +4,8 @@ import './index.css';
 
 function Header({ toggleAbout, showAbout }) {
   return (
-    <header className="text-center w-full max-w-xl mx-auto mt-8">
-      <h1 className="text-2xl font-light">
+    <header className="text-center w-full max-w-xs">
+      <h1 className="text-[28px] font-light">
         Hello, I'm <span className="font-bold text-foreground">Zhe Wei</span>.
       </h1>
       <div className="flex items-center justify-center gap-6 mt-2">
@@ -17,7 +17,7 @@ function Header({ toggleAbout, showAbout }) {
           aria-label="About me"
           title="About me"
         >
-          <User className="h-7 w-7 stroke-[1px]" />
+          <User className="h-[28px] w-[28px] stroke-[1px]" />
         </button>
         <span className="w-px h-8 bg-foreground"></span>
         <a
@@ -26,13 +26,13 @@ function Header({ toggleAbout, showAbout }) {
           rel="noopener noreferrer"
           className="hover:text-accent"
         >
-          <Linkedin className="h-7 w-7 stroke-[1px]" title="LinkedIn" />
+          <Linkedin className="h-[28px] w-[28px] stroke-[1px]" title="LinkedIn" />
         </a>
         <a href="mailto:czhewei.work@gmail.com" className="hover:text-accent">
-          <Mail className="h-7 w-7 stroke-[1px]" title="Mail" />
+          <Mail className="h-[28px] w-[28px] stroke-[1px]" title="Mail" />
         </a>
         <a href="tel:+6596747271" className="hover:text-accent">
-          <Phone className="h-7 w-7 stroke-[1px]" title="Phone" />
+          <Phone className="h-[28px] w-[28px] stroke-[1px]" title="Phone" />
         </a>
       </div>
     </header>
@@ -47,8 +47,14 @@ function AboutSection() {
     "That perspective continues to shape how I approach building modern infrastructure and delivering software today."
   ];
 
+  const sectionStyle = {
+    maxWidth: '800px',
+    textAlign: 'justify',
+    'margin-top': '15px',
+  };
+  
   return (
-    <section className="max-w-xl mx-auto mt-6 text-justify">
+    <section style={sectionStyle}>
       {aboutText.map((paragraph, index) => (
         <p key={index} className="mb-4">
           {paragraph}
@@ -66,11 +72,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50 text-foreground">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
       <Header toggleAbout={toggleAbout} showAbout={showAbout} />
-      <main className="w-full max-w-2xl mx-auto pt-4">
-        {showAbout && <AboutSection />}
-      </main>
+      {showAbout && <AboutSection />}
     </div>
   );
 }
